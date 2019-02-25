@@ -7,6 +7,7 @@ import { apiConfig } from "./apiConfig";
 
 // Reducers
 // TODO
+import notifyReducer from "./reducers/notifyReducer";
 
 const firebaseConfig = apiConfig;
 
@@ -32,7 +33,8 @@ const createStoreWithFirebase = compose(
 // Add firebase to reducers
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
-  firestore: firestoreReducer
+  firestore: firestoreReducer,
+  notify: notifyReducer
 });
 
 // Create Initial State
