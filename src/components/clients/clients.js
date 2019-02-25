@@ -71,7 +71,7 @@ class Clients extends Component {
                       className="btn btn-secondary btn-sm"
                     >
                       <i className="fas fa-arrow-circle-right" />
-                      Details
+                      {"  "}Details
                     </Link>
                   </td>
                 </tr>
