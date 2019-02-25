@@ -51,7 +51,7 @@ const Settings = props => {
               <label>Disable Balance On Edit</label>{" "}
               <input
                 type="checkbox"
-                name="disableBalanceOnAdd"
+                name="disableBalanceOnEdit"
                 checked={disableBalanceOnEdit}
                 onChange={setDisableBalanceOnEdit}
               />
