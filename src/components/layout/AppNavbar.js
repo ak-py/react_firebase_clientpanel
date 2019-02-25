@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firebaseConnect } from "react-redux-firebase";
+import { notifyUser } from "../../actions/notifyActions";
 
 class AppNavbar extends Component {
   state = {
@@ -23,9 +24,10 @@ class AppNavbar extends Component {
   onLogoutClick = e => {
     e.preventDefault();
 
-    const { firebase } = this.props;
+    const { firebase, notifyUser } = this.props;
 
-    firebase.logout();
+    // Logout and clear out the notification tray
+    firebase.logout().then(() => notifyUser(null, "success"));
   };
 
   render() {
@@ -107,13 +109,19 @@ class AppNavbar extends Component {
 AppNavbar.propTypes = {
   firebase: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
+  notify: PropTypes.object.isRequired,
+  notifyUser: PropTypes.func.isRequired
 };
 
 export default compose(
   firebaseConnect(),
-  connect((state, props) => ({
-    auth: state.firebase.auth,
-    settings: state.settings
-  }))
+  connect(
+    (state, props) => ({
+      auth: state.firebase.auth,
+      settings: state.settings,
+      notify: state.notify
+    }),
+    { notifyUser }
+  )
 )(AppNavbar);

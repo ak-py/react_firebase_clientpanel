@@ -20,7 +20,7 @@ class ClientDetails extends Component {
     const { balanceUpdateAmount } = this.state;
 
     const clientUpdate = {
-      balance: parseFloat(balanceUpdateAmount)
+      balance: balanceUpdateAmount === "" ? 0 : parseFloat(balanceUpdateAmount)
     };
 
     // Update in firestore
@@ -61,7 +61,7 @@ class ClientDetails extends Component {
               <input
                 type="submit"
                 value="Update"
-                className="btn btn-outlibe-dark"
+                className="btn btn-outline-dark"
               />
             </div>
           </div>
@@ -133,12 +133,8 @@ class ClientDetails extends Component {
               </div>
               <hr />
               <ul className="list-group">
-                <li className="list-group-item">
-                  Contact Email: {client.email}
-                </li>
-                <li className="list-group-item">
-                  Contact Phone: {client.phone}
-                </li>
+                <li className="list-group-item">Email: {client.email}</li>
+                <li className="list-group-item">Phone: {client.phone}</li>
               </ul>
             </div>
           </div>

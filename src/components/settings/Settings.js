@@ -65,8 +65,8 @@ const Settings = props => {
 
 Settings.propTypes = {
   settings: PropTypes.object.isRequired,
-  setDisabledBalanceOnAdd: PropTypes.func.isRequired,
-  setDisabledBalanceOnEdit: PropTypes.func.isRequired,
+  setDisableBalanceOnAdd: PropTypes.func.isRequired,
+  setDisableBalanceOnEdit: PropTypes.func.isRequired,
   setAllowRegistration: PropTypes.func.isRequired
 };
 
