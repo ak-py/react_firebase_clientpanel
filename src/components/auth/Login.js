@@ -11,6 +11,22 @@ class Login extends Component {
     password: ""
   };
 
+  onSubmit = e => {
+    e.preventDefault();
+
+    const { firebase, history } = this.props;
+    const { email, password } = this.state;
+
+    firebase
+      .login({
+        email,
+        password
+      })
+      .catch(err => alert("Invalid Login Credentials"));
+  };
+
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
     return (
       <div className="row">
@@ -23,7 +39,7 @@ class Login extends Component {
                   {"  "}Login
                 </span>
               </h1>
-              <form>
+              <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input
