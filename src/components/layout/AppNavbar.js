@@ -21,6 +21,8 @@ class AppNavbar extends Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link to="/" className="nav-link">
+                  <i className="fas fa-tachometer-alt" />
+                  {"  "}
                   Dashboard
                 </Link>
               </li>
