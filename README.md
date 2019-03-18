@@ -1,3 +1,4 @@
+[![codebeat badge](https://codebeat.co/badges/7112a2ba-1c47-4caf-bb46-3af2629fc578)](https://codebeat.co/projects/github-com-akshitgupta1996-react_firebase_clientpanel-master)
 # https://reactclientpanelak.firebaseapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
